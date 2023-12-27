@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide de Réservation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: rgb(138, 172, 239);
+        }
+
+        h1, h2, p {
+            margin-bottom: 15px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .guide {
+            flex-basis: calc(50% - 10px); /* Prend 50% de la largeur avec une marge de 10px */
+            box-sizing: border-box;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio for responsive video */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Guide de Réservation de Vol</h1>
+
+    <div class="container">
+
+        <div class="guide">
+            <h2>1. Recherche de Vol</h2>
+            <p>Commencez par utiliser notre barre de recherche pour trouver les vols disponibles. Entrez votre lieu de départ, votre destination, et les dates de voyage.</p>
+
+            <h2>2. Sélection du Vol</h2>
+            <p>Explorez les options de vol qui répondent à vos besoins. Choisissez le vol qui correspond à vos préférences en termes d'horaires et de tarifs.</p>
+
+            <h2>3. Formulaire de Réservation</h2>
+            <p>Remplissez le formulaire de réservation avec vos informations personnelles. Assurez-vous de fournir des détails corrects pour garantir une réservation réussie.</p>
+
+            <h2>4. Paiement</h2>
+            <p>Procédez au paiement pour confirmer votre réservation. Nous offrons des options de paiement sécurisées pour assurer la protection de vos informations financières.</p>
+        </div>
+
+        <div class="video-container guide">
+            <iframe width="560" height="315" src="videoaide.mp4" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+    </div>
+
+</body>
+</html>
+

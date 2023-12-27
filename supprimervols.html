@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Supprimer Vols </title>
+    <style>
+
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url(bbl1.jpeg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin: 0;
+      padding: 0;
+      height: 700px;
+  }
+  .h1{
+    color:#726666;
+  }
+  
+  b{
+      margin-bottom: 30px;
+  }
+  #logo{
+      width: 70px;
+      float: left;
+  }
+   header{
+      width: auto;
+      color: aliceblue;
+      padding: 25px;
+      background-color:rgb(127, 127, 127);
+     
+  }
+  .navliste{
+      display: inline;
+      padding: 20px;
+  }
+  .navliste a{
+      color: white;
+      cursor: pointer;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.2 em;
+      text-decoration: none;
+  }
+  .navliste a:hover{
+      padding: 10px;
+      background-color: black;
+  }
+  #nav{
+      float: right;
+  }
+  .clairfixe::after{
+      content: "";
+      display: table;
+      clear: both;
+  
+  
+  }
+  
+  
+  form {
+      color: black;
+      max-width: 500px;
+      margin: 30px auto;
+      background-color:rgb(127, 127, 127);
+      opacity: 0.8;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      opacity: 0.8;
+  
+  }
+  
+  label {
+      display: block;
+      margin-bottom: 8px;
+      color:white;
+  }
+  
+  .i1 {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+  }
+  
+  input[type="submit"] {
+     background-color: green;
+      color: white;
+      cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+      background-color:black;
+  }
+  .t1{
+     width: 250px;
+  }
+  
+  
+  footer{
+      text-align: center;
+      width: auto;
+      color: aliceblue;
+      padding: 25px;
+      background-color: #433a3a;
+  }
+  
+</style>
+  
+  
+</head>
+<body>
+   
+
+  <center><p> <h1 class="h1"> ADMISTRATION </h1></p></center> 
+  
+
+
+      <div id="container">
+      
+      <form action="supprimervols.php" method="post">
+          <h1><center>Supprimer Des Vols </center> </h1>
+  
+          <label>vols Id:</label>
+          <input class="i1"  type="number" name="volsId" required><br><br>
+
+          <label>lieu_depart  :</label>
+          <input class="i1"  type="text" name="lieu_depart" required><br><br>
+  
+          <label>date_depart:</label>
+          <input class="i1"  type="date" name="date_depart" required><br>
+          
+          <input class="i1" type="submit" value="Supprimer">
+          <input class="i1" type="reset" value="Annuller">
+          <a href="menuGenerale.php"><input class="i1" type="button" value="Retourner"></a>
+      </form>
+     
+  </body>
+  </html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de Réservation</title>
+   
+
+
+</head>
+<body>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-image: url(v3.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+}
+b{
+    margin-bottom: 30px;
+}
+
+ header{
+    width: auto;
+    color: black;
+    padding: 25px;
+    background: linear-gradient(#c5c3ce,#333);
+   
+}
+.navliste{
+    display: inline;
+    padding: 20px;
+}
+.navliste a{
+    color: black;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2 em;
+    text-decoration: none;
+}
+.navliste a:hover{
+    padding: 10px;
+    background-color: blue;
+}
+#nav{
+    float: right;
+}
+.clairfixe::after{
+    content: "";
+    display: table;
+    clear: both;
+
+
+}
+
+
+form {
+    color: black;
+    max-width: 500px;
+    margin: 30px auto;
+    background-color: rgba(50, 49, 49, 0.2);
+    opacity: 0.8;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0.8;
+
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color:black;
+}
+
+.i1 {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+   background-color: green;
+    color: white;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color:black;
+}
+.t1{
+   width: 250px;
+}
+
+
+footer{
+    text-align: center;
+    width: auto;
+    padding: 25px;
+    background-color: #333; /* Couleur de fond du pied de page */
+    color: #fff; 
+}
+
+
+
+
+    </style>
+    
+    <header  class="clairfixe" >
+      
+        <IMG SRC="logotiket.png"50" height="40" > 
+           
+             
+            <ul id="nav">
+                <li class="navliste"><a href="acceuille2.html" >Accueil</a></li>
+                <li class="navliste"><a href="#" >À propos</a></li>
+                <li class="navliste"><a href="https://web.whatsapp.com/send?phone=25377458449">Contact</a></li>
+            </ul>
+     
+       
+      </header>  
+    <div id="container">
+    
+    <form action="formulaire1.php" method="post">
+        <h1>Inscription</h1>
+
+        <label for="nom">Nom:</label>
+        <input class="i1"  type="text" name="nom" required><br>
+
+        <label for="prenom">Prénom:</label>
+        <input class="i1"  type="text" name="prenom" required><br>
+
+        <label for="adresse">Adresse:</label>
+        <input class="i1"    type="text" name="adresse" required><br>
+
+       <label for="email">Email </label>
+         <input class="i1"  type="email" name="email">
+
+
+        <label for="Numero_telephone">Numero de Telephone </label>
+<input class="i1"  type="number" name="Numero_telephone"  ><br>
+
+
+<label for="Sexe">Sexe</label>
+<table border="0"><tr><td class="t1"><input type="radio" name="Sexe" value="Masculin"  > Masculin</td>
+    <td class="t1"><input type="radio" name="Sexe" value="Feminin" > Feminin</td></tr></table>
+
+  
+            <br>
+            <label for="code_passport">Code Passport</label>
+            <input class="i1"  type="text" name="code_passport" required><br>
+            
+        <input class="i1" type="submit" value="Enregistrer">
+    </form></dir>
+    <footer>
+        <p> Copyright   2023   Air ticket booking </p>
+    </footer>
+</body>
+</html>

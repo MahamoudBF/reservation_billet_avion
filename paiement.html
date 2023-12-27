@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page de Paiement</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(k1.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+    
+        header {
+            background: linear-gradient(#c5c3ce,#333);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+    
+        header a {
+            color:black;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: bold;
+            font-size: 18px;
+            flex-grow: 1;
+        }
+    
+        header a:hover {
+            text-decoration: underline;
+        }
+        #p1 {
+    width: 90%;
+    color: white;
+    padding: 13px;
+    border-radius: 8px;
+    display: inline-block;
+    background: linear-gradient(to right, #4e4eff, #24ce02); /* Dégradé de couleurs pour le fond */
+    position: relative;
+    font-weight: bold;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+}
+
+
+
+
+
+    
+        #payment-container {
+            width: 400px;
+            background-color:#f4F7FD;
+            padding: 70px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 10px auto;
+            justify-content: space-between;
+          
+        }
+        #payment-container p {
+            text-align: center; 
+            margin-bottom: 10px; 
+            font-size: 16px; 
+            color: #333;
+        }
+    
+        #visa-form {
+            display: block;
+        }
+    
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+    
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+    
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 30%;
+            margin-right: 10px;
+        }
+        button:hover{
+            background-color: #333;
+        }
+    
+        .button-container {
+            margin-bottom: 16px;
+            text-align: center;
+            display: flex;
+    justify-content: space-between; 
+        }
+    
+        #logo {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logotiket.png" alt="Logo" width="80" height="50">
+        <div>
+            <a href="acceuille2.php">Accueil</a>
+            <a href="https://web.whatsapp.com/send?phone=25377458449">Contact</a>
+            <a href="formulaire1.html">Formulaire</a>
+        </div>
+    </header>
+    
+    <div id="payment-container">
+        <img src="visacart.png" width="100%" height="50px">
+       
+        <p id="p1">Carte Visa :</p>
+        
+        <div id="visa-form">
+            <label for="card-number">Numéro de carte :</label>
+            <input type="number" id="card-number" placeholder="1234 5678 9012 3456" oninput="validateInput(this, 'cardNumber')">
+
+            <label for="card-name">Nom sur la carte :</label>
+            <input type="text" id="card-name" placeholder="Nom sur carte" oninput="validateInput(this, 'cardName')">
+
+            <label for="card-expiration">Date d'expiration :</label>
+            <input type="date" id="card-expiration" placeholder="JJ/MM/YY" oninput="validateInput(this, 'cardExpiration')">
+            
+            <label for="card-cvv">Code CVV/CVC :</label>
+            <input type="number" id="card-cvv" placeholder="123" oninput="validateInput(this, 'cardCVV')">
+
+            <div class="button-container">
+                <button onclick="resetPaymentForm()">Reinitialiser</button>
+                <button onclick="processPayment('visa')">Payer</button><br>
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function processPayment(method) {
+            var cardNumberInput, nameInput, expirationInput, cvvInput, message;
+            
+            cardNumberInput = document.getElementById("card-number");
+            nameInput = document.getElementById("card-name");
+            expirationInput = document.getElementById("card-expiration");
+            cvvInput = document.getElementById("card-cvv");
+            message = "Veuillez remplir tous les champs du formulaire Visa.";
+            
+            // Vérification de la longueur du numéro de carte
+            if (!isCardNumberValid(cardNumberInput)) {
+                showValidation(false, "Le numéro de carte doit contenir 16 chiffres.");
+                return;
+            }
+    
+            if (!isInputValid(nameInput)) {
+                showValidation(false, "Veuillez saisir un nom valide.");
+                return;
+            }
+    
+            if (!isExpirationValid(expirationInput)) {
+                showValidation(false, "Veuillez saisir une date d'expiration valide (JJ/MM/YY).");
+                return;
+            }
+    
+            if (!isCVVValid(cvvInput)) {
+                showValidation(false, "Veuillez saisir un code CVV/CVC valide (3 chiffres).");
+                return;
+            }
+    
+            showValidation(true, "Le paiement a été traité avec succès!");
+        }
+    
+        function isCardNumberValid(input) {
+            return input.value.length === 16 && /^\d+$/.test(input.value);
+        }
+    
+        function isInputValid(input) {
+            return input.value.trim() !== "" && !/\d/.test(input.value);
+        }
+    
+        function isExpirationValid(input) {
+            // Vérifier si la date d'expiration est d'au moins un mois plus tard que la date actuelle
+            var expirationDate = new Date(input.value);
+            var currentDate = new Date();
+            currentDate.setMonth(currentDate.getMonth() + 1); // Ajouter un mois à la date actuelle
+
+            if (expirationDate < currentDate) {
+                return false;
+            }
+
+            return true;
+        }
+    
+        function isCVVValid(input) {
+            return /^\d{3}$/.test(input.value);
+        }
+    
+        function cancelPayment() {
+            var visaForm = document.getElementById("visa-form");
+    
+            visaForm.style.display = "none";
+            document.getElementById("method-selection").style.display = "block";
+        }
+        function resetPaymentForm() {
+    // Réinitialiser les valeurs des champs du formulaire
+    document.getElementById('card-number').value = '';
+    document.getElementById('card-name').value = '';
+    document.getElementById('card-expiration').value = '';
+    document.getElementById('card-cvv').value = '';
+
+}
+    
+        function showValidation(success, message) {
+            var modal = document.createElement("div");
+            modal.style.position = "fixed";
+            modal.style.top = "50%";
+            modal.style.left = "50%";
+            modal.style.transform = "translate(-50%, -50%)";
+            modal.style.background = "white";
+            modal.style.padding = "20px";
+            modal.style.borderRadius = "8px";
+            modal.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.3)";
+            modal.style.zIndex = "1000";
+    
+            var icon = document.createElement("div");
+            icon.style.fontSize = "24px";
+            icon.style.marginBottom = "16px";
+    
+            if (success) {
+                icon.innerHTML = "✅";
+                icon.style.color = "green";
+            } else {
+                icon.innerHTML = "❌";
+                icon.style.color = "red";
+            }
+    
+            var messageElement = document.createElement("div");
+            messageElement.innerHTML = message;
+            messageElement.style.marginBottom = "16px";
+    
+            var okButton = document.createElement("button");
+            okButton.innerHTML = "OK";
+            okButton.style.background = "#4caf50";
+            okButton.style.color = "white";
+            okButton.style.padding = "10px";
+            okButton.style.border = "none";
+            okButton.style.borderRadius = "4px";
+            okButton.style.cursor = "pointer";
+            okButton.style.width = "100%";
+            okButton.addEventListener("click", function () {
+                modal.remove();
+            });
+    
+            modal.appendChild(icon);
+            modal.appendChild(messageElement);
+            modal.appendChild(okButton);
+    
+            document.body.appendChild(modal);
+        }
+    </script>
+</body>
+</html>

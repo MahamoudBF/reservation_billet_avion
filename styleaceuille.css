@@ -1,0 +1,74 @@
+body{
+    margin: auto;
+    width: auto;
+    background-image: url(R2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: auto;
+    border-radius: 15px;
+}
+
+   
+
+header{
+    width: auto;
+    padding: 25px;
+    margin: auto;
+    background-color:rgb(127, 127, 127);
+  
+
+}
+.d2{
+    margin: auto;
+    height: auto;
+}
+.ph1{
+    margin: auto;
+    padding: auto;
+}
+
+
+footer{
+padding: auto;
+margin: auto;
+width: auto;
+height: 130px;
+background-color: #433a3a;
+
+}
+input[name="villeDepart"]{
+    padding: 8px;
+    width: 180px;
+}
+input[name="villearrive"]{
+    padding: 8px;
+    width: 180px;
+}
+input[name="datedepart"]{
+    padding: 8px;
+    width: 180px;
+}
+input[name="dateRetour"]{
+    padding: 8px;
+    width: 180px;
+}
+input[ NAME="sonnom" ]{
+    padding: 8px;
+    width: 180px;
+}
+input[name="rechercher"]{
+    padding: 8px;
+    width: 180px;
+}
+.p1{
+   width: 1300px;
+    height: 500px;
+    
+
+
+}
+
+table{
+   
+    width: 100%;
+}
